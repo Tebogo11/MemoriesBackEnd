@@ -19,12 +19,12 @@ app.use(express.urlencoded({ limit: "30mb", extended: true }));
 //more info https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS
 app.use(cors());
 
-app.get("/", (req, res) => res.send("Hello backend surfer"));
-
 //middleware sets action(second parameter) based on first parameter accessed
 //when /posts is called run postRoutes
 app.use("/posts", postRoutes);
 app.use("/user", userRoutes);
+
+app.get("/", (req, res) => res.send("Hello backend surfer"));
 
 //the url to Connect to mongodb cloud atlas db
 // const CONNECTION_URL =
